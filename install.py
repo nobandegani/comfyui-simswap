@@ -75,7 +75,7 @@ with open(req_file) as file:
             if not is_installed(ort,"1.17.0",False):
                 run_pip(ort,"--extra-index-url", "https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/")
         elif not is_installed(ort,"1.16.1",False):
-            run_pip(ort, "-U")
+            run_pip(ort, "onnxruntime-gpu==1.16.1")
     except Exception as e:
         print(e)
         print(f"Warning: Failed to install {ort}, Simswap will not work.")

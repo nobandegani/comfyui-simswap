@@ -2,9 +2,9 @@
 setlocal enabledelayedexpansion
 
 :: Try to use embedded python first
-if exist ..\..\..\python_embeded\python.exe (
+if exist ..\..\.venv\Scripts\python.exe (
     :: Use the embedded python
-    set PYTHON=..\..\..\python_embeded\python.exe
+    set PYTHON=..\..\.venv\Scripts\python.exe
 ) else (
     :: Embedded python not found, check for python in the PATH
     for /f "tokens=* USEBACKQ" %%F in (`python --version 2^>^&1`) do (
